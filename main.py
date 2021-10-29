@@ -5,8 +5,8 @@ Listavalasz = []
 temp = 0
 for i in file.readlines():
     Lista.append(i)
-    Listakod.append(i[0, 5])
-    Listavalasz.append(i[7, 21])
+    Listakod.append(i[0, 4])
+    Listavalasz.append(i[6, 19])
     temp += 1
 print("1. feladat: Adatok beolvasva")
 print(f"2. feladat: A versenyen {temp-1} versebyző indult")
@@ -40,6 +40,8 @@ for s in range(len(kodja)):
     else:
         f4 += " "
 print(f4)
+
+
 #feladat5
 sorszam = int(input("Kérem egy feladat sorszámát"))
 Megoldas = Lista[0]
@@ -50,6 +52,8 @@ for i in Listavalasz:
         helyes +=1
 print("A versenyzők {}%-a válaszolt helyesn".format(((helyes)/temp-1*100)))
 
+
+
 #feladat6
 temp = 0
 file2 = open("pontok.txt", "a")
@@ -58,7 +62,6 @@ for i in Listavalasz:
      temp3 = ""
      megold = 0
      for r in range(14):
-
          if (seged[r] == Megoldas[r] and r < 6):
              megold += 3
          if (seged[r] == Megoldas[r] and r > 5 and r < 11) :
@@ -70,6 +73,9 @@ for i in Listavalasz:
      temp3 = f"{Listakod[temp]} {megold}"
      temp+=1
      file2.write(temp3)
+
+
+#feladat7
 print("7. feladat: A verseny legjobbjai")
 file2.flush()
 temp = 0
@@ -108,7 +114,6 @@ for i in Listaeredmeny:
     temp+=1
     if (i[7, 8] == max):
         print(f"3. díj ({max} {Listakod[temp]})")
-
 file.close()
 file2.close()
 
